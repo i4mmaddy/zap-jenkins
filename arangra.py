@@ -23,7 +23,7 @@ try:
     userid= f"{uid}:{gid}"
     vol = '/zap/wrk'
     container_output = docker.containers.run(docker_image, command_line, volumes={build_dir: {
-                    'bind':vol , 'mode': 'rw'}},user=userid)
+                    'bind':vol , 'mode': 'rw'}},user='root)
     print('[SUCCESS]: Scan Completed aranga')
     print(container_output)
 except errors.ContainerError as exc:
