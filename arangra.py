@@ -18,10 +18,12 @@ try:
     build_dir = os.getcwd()
     docker_image = 'owasp/zap2docker-stable '
     command_line = 'touch /zap/wrk/ramanuja.txt'
-    users = 'jenkins'
+    uid = os.getuid()
+    gid = os.getgid()
+    userid= f"{uid}:{gid}"
     vol = '/zap/wrk'
     container_output = docker.containers.run(docker_image, command_line, volumes={build_dir: {
-                    'bind':vol , 'mode': 'rw'}},user=users)
+                    'bind':vol , 'mode': 'rw'}},user=userid)
     print('[SUCCESS]: Scan Completed aranga')
     print(container_output)
 except errors.ContainerError as exc:
