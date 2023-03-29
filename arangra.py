@@ -1,8 +1,16 @@
 import docker
 import os 
+from docker import errors
 
+try:
+    docker = docker.from_env()
+except Exception as e:
+    print('Docker not found in your machine, Pls install')
+        #print(str(e))
+    exit(3) ## docker/system error
 
-
+    
+    
 ## running the scan
 
 
