@@ -16,7 +16,7 @@ except Exception as e:
 
 try:
     build_dir = os.getcwd()
-    docker_image = 'owasp/zap2docker-stable '
+    docker_image = 'owasp/zap2docker-stable'
     command_line = 'touch /zap/wrk/ramanuja.txt'
     uid = os.getuid()
     gid = os.getgid()
