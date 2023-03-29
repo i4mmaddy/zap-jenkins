@@ -17,7 +17,7 @@ except Exception as e:
 try:
     build_dir = os.getcwd()
     docker_image = 'owasp/zap2docker-stable'
-    command_line = 'touch /zap/wrk/ramanuja.txt'
+    command_line = 'zap-baseline.py -j -t https://demo.testfire.net/ -g gen.conf -J full_scan_02.json'
     uid = os.getuid()
     gid = os.getgid()
     userid= f"{uid}:{gid}"
