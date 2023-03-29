@@ -3,7 +3,7 @@ pipeline{
   stages{
     stage('mkdir'){
       steps{
-          sh 'mkdir ${WORKSPACE}/zap'   
+          sh 'mkdir -p ${WORKSPACE}/zap/wrk'   
       }
     }
     stage('aranga'){
